@@ -3,8 +3,8 @@ from github import Github
 
 g = Github(os.environ['GITHUB_TOKEN'])
 
-repo_A = g.get_repo("owner/repoOrigin") 
-repo_B = g.get_repo("owner/repoTarget")
+repo_A = g.get_repo("ycedres/repoOrigin") 
+repo_B = g.get_repo("ycedres/repoTarget")
 
 issue_number = int(os.environ['ISSUE_NUMBER'])
 issue = repo_A.get_issue(issue_number)
