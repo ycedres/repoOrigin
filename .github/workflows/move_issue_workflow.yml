@@ -24,7 +24,7 @@ jobs:
       run: |
         echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> "$GITHUB_ENV"
         echo "ISSUE_NUMBER=${{github.event.issue.number}}" >> "$GITHUB_ENV"
-        python ./move_issue.py $GITHUB_TOKEN $ISSUE_NUMBER
+        python ./move_issue.py 
 
 
 
