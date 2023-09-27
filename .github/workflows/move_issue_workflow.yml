@@ -5,7 +5,7 @@ on:
 jobs:
   move-issue:
     permissions: 
-      issues: write 
+      issues: read|write 
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository
