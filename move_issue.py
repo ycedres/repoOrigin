@@ -1,7 +1,9 @@
 import os
-from github import Github
+from github import Github, Auth
 
-g = Github(os.environ['GITHUB_TOKEN'])
+token = os.environ['GITHUB_TOKEN']
+auth = Auth.Token(token)
+g = Github(auth=auth)
 
 repo_A = g.get_repo("ycedres/repoOrigin") 
 repo_B = g.get_repo("ycedres/repoTarget")
