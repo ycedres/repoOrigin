@@ -1,4 +1,4 @@
-import os
+import sys
 from github import Github, Auth
 
 token, issue_number = sys.argv[1], int(sys.argv[2])
