@@ -9,7 +9,7 @@ repo_B = g.get_repo("ycedres/repoTarget")
 issue_number = int(os.environ['ISSUE_NUMBER'])
 issue = repo_A.get_issue(issue_number)
 
-if "easy" in [label.name for label in issue.get_labels()]:
+if "good first issue" in [label.name for label in issue.get_labels()]:
     new_issue = repo_B.create_issue(
         title=issue.title,
         body=f"Originally reported by: {issue.user.login}\n\n{issue.body}",
