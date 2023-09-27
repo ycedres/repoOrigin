@@ -2,6 +2,7 @@ import os
 from github import Github, Auth
 
 token = os.environ['GITHUB_TOKEN']
+print(token)
 auth = Auth.Token(token)
 g = Github(auth=auth)
 
