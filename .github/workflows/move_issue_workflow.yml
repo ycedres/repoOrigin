@@ -21,8 +21,11 @@ jobs:
         pip install PyGithub
 
     - name: Run Python script
-      run: python ./move_issue.py
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        ISSUE_NUMBER: ${{github.event.issue.number}}
+      run: |
+        echo "GITHUB_TOKEN=${{secrets.GITHUB_TOKEN}}" >> "$GITHUB_ENV"
+        echo "ISSUE_NUMBER=${{github.event.issue.number}}" >> "$GITHUB_ENV"
+        python ./move_issue.py
+
+
+
 
