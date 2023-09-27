@@ -1,15 +1,12 @@
 import os
 from github import Github, Auth
 
-token = os.environ['GITHUB_TOKEN']
-print(token)
-auth = Auth.Token(token)
-g = Github(auth=auth)
+token, issue_number = sys.argv[1], int(sys.argv[2])
+g = Github(token)
 
 repo_A = g.get_repo("ycedres/repoOrigin") 
 repo_B = g.get_repo("ycedres/repoTarget")
 
-issue_number = int(os.environ['ISSUE_NUMBER'])
 issue = repo_A.get_issue(issue_number)
 
 if "good first issue" in [label.name for label in issue.get_labels()]:
